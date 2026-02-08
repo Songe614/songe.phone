@@ -10,9 +10,9 @@
     <!-- 配置弹窗（打开页面先显示这个） -->
     <div class="config-modal" id="configModal">
         <div class="config-box">
-            <h3>最初の设置</h3>
+            <h3>配置你的AI小手机</h3>
             <div class="config-item">
-                <label>ta的头像（上传图片）：</label>
+                <label>AI头像（上传图片）：</label>
                 <!-- 隐藏的文件选择器 -->
                 <input type="file" id="avatarFile" accept="image/*" style="display: none;">
                 <!-- 显示的上传按钮+预览图 -->
@@ -24,16 +24,20 @@
                 </div>
             </div>
             <div class="config-item">
-                <label>ta的姓名：</label>
-                <input type="text" id="nameInput" placeholder="比如“聊天助手”">
+                <label>AI名称：</label>
+                <input type="text" id="nameInput" placeholder="比如“日野森志步”">
             </div>
             <div class="config-item">
-                <label>ta的人设：</label>
+                <label>AI人设：</label>
                 <textarea id="settingInput" placeholder="比如“你是我的朋友，说话温柔，回复简短”"></textarea>
             </div>
             <div class="config-item">
-                <label>API密钥配置（sk开头）：</label>
-                <input type="text" id="keyInput" placeholder="……">
+                <label>API接口网址：</label>
+                <input type="text" id="apiUrlInput" placeholder="比如https://open.doubao.com/api/v1/chat/completions">
+            </div>
+            <div class="config-item">
+                <label>API密钥（Bearer Token）：</label>
+                <input type="text" id="apiKeyInput" placeholder="比如sk-开头的密钥，或其他API的Token">
             </div>
             <button id="saveConfigBtn">保存配置，进入聊天</button>
         </div>
@@ -46,14 +50,13 @@
             <div class="avatar" id="avatarDisplay">
                 <img src="https://via.placeholder.com/40/eee/333?text=AI" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
             </div>
-            <div class="chat-name" id="nameDisplay">TA</div>
+            <div class="chat-name" id="nameDisplay">我的AI</div>
         </div>
         <div class="chat-content" id="chatContent">
-            <div class="chat-content" id="chatContent">
-    <!-- 这里的内容会由JS动态生成，不用写固定文案 -->
-</div>
+            <!-- AI欢迎语会根据人设动态生成，无需固定文案 -->
+        </div>
         <div class="input-area">
-            <input type="text" id="msgInput" placeholder="输入消息..." autocomplete="off">
+            <input type="text" id="msgInput" placeholder="输入消息，回车发送..." autocomplete="off">
             <button id="sendBtn">发送</button>
         </div>
     </div>
