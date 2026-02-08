@@ -1,0 +1,194 @@
+/* 全局样式：消除默认边距，适配所有设备 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "微软雅黑", sans-serif;
+}
+/* 页面背景：浅灰色，让手机居中 */
+body {
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+/* 手机外壳样式：黑色圆角，模拟真实手机 */
+.phone {
+    width: 100%;
+    max-width: 380px;
+    height: 700px;
+    background: #000;
+    border-radius: 40px;
+    padding: 15px;
+    overflow: hidden;
+    position: relative;
+}
+/* 手机状态栏：白色文字，居中 */
+.phone-status {
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+/* 聊天头部：头像+名称，横向排列 */
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+}
+/* 头像：圆形，适配图片/文字 */
+.avatar {
+    width: 36px;
+    height: 36px;
+    background: #d8c8ff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+    margin-right: 10px;
+    overflow: hidden;
+}
+/* 聊天名称：白色文字，中等大小 */
+.chat-name {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+}
+/* 聊天内容区：白色背景，可滚动，占手机主要高度 */
+.chat-content {
+    width: 100%;
+    height: calc(100% - 120px);
+    background: #f8f8f8;
+    border-radius: 20px;
+    padding: 20px;
+    overflow-y: auto;
+    /* 隐藏滚动条，更美观 */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.chat-content::-webkit-scrollbar {
+    display: none;
+}
+/* 消息通用样式：最大宽度80%，避免气泡过长 */
+.msg {
+    margin-bottom: 15px;
+    max-width: 80%;
+    display: flex;
+}
+/* AI消息：左对齐，浅灰色气泡 */
+.ai-msg {
+    justify-content: flex-start;
+}
+/* 用户消息：右对齐，深绿气泡，白色文字 */
+.user-msg {
+    justify-content: flex-end;
+    margin-left: auto;
+}
+/* 消息气泡样式：圆角，内边距，行高 */
+.msg-box {
+    padding: 10px 15px;
+    border-radius: 18px;
+    line-height: 1.4;
+    font-size: 14px;
+}
+.ai-msg .msg-box {
+    background: #e5e5e5;
+    border-top-left-radius: 5px;
+}
+.user-msg .msg-box {
+    background: #2A6E3F;
+    color: #fff;
+    border-top-right-radius: 5px;
+}
+/* 输入区：白色背景，圆角，横向排列 */
+.input-area {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 30px;
+    padding: 5px 10px;
+    margin-top: 10px;
+}
+/* 输入框：无边框，占满剩余宽度，聚焦无高亮 */
+.input-area input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    font-size: 14px;
+}
+/* 发送按钮：深绿色，圆角，无轮廓 */
+.input-area button {
+    padding: 8px 18px;
+    background: #2A6E3F;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* 配置弹窗样式 */
+.config-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.config-box {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 380px;
+}
+.config-box h3 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+.config-item {
+    margin-bottom: 15px;
+}
+.config-item label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #666;
+}
+.config-item input, .config-item textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+}
+.config-item textarea {
+    height: 80px;
+    resize: none;
+}
+#saveConfigBtn {
+    width: 100%;
+    padding: 12px;
+    background: #2A6E3F;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
