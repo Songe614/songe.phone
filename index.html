@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的AI小手机</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 配置弹窗（打开页面先显示这个） -->
+    <div class="config-modal" id="configModal">
+        <div class="config-box">
+            <h3>最初の设置</h3>
+            <div class="config-item">
+                <label>ta的头像（上传图片）：</label>
+                <!-- 隐藏的文件选择器 -->
+                <input type="file" id="avatarFile" accept="image/*" style="display: none;">
+                <!-- 显示的上传按钮+预览图 -->
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <button id="avatarUploadBtn" style="padding: 8px 15px; border: 1px solid #ddd; border-radius: 8px; cursor: pointer;">选择图片</button>
+                    <div id="avatarPreview" style="width: 40px; height: 40px; border-radius: 50%; background: #eee; overflow: hidden;">
+                        <img src="" alt="预览" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                    </div>
+                </div>
+            </div>
+            <div class="config-item">
+                <label>ta的姓名：</label>
+                <input type="text" id="nameInput" placeholder="比如“聊天助手”">
+            </div>
+            <div class="config-item">
+                <label>ta的人设：</label>
+                <textarea id="settingInput" placeholder="比如“你是我的朋友，说话温柔，回复简短”"></textarea>
+            </div>
+            <div class="config-item">
+                <label>API密钥配置（sk开头）：</label>
+                <input type="text" id="keyInput" placeholder="……">
+            </div>
+            <button id="saveConfigBtn">保存配置，进入聊天</button>
+        </div>
+    </div>
+
+    <!-- 手机整体外壳（默认隐藏，配置后显示） -->
+    <div class="phone" id="phone" style="display: none;">
+        <div class="phone-status" id="deviceStatus">加载中...</div>
+        <div class="chat-header">
+            <div class="avatar" id="avatarDisplay">
+                <img src="https://via.placeholder.com/40/eee/333?text=AI" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+            </div>
+            <div class="chat-name" id="nameDisplay">TA</div>
+        </div>
+        <div class="chat-content" id="chatContent">
+            <div class="chat-content" id="chatContent">
+    <!-- 这里的内容会由JS动态生成，不用写固定文案 -->
+</div>
+        <div class="input-area">
+            <input type="text" id="msgInput" placeholder="输入消息..." autocomplete="off">
+            <button id="sendBtn">发送</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
